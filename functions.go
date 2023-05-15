@@ -21,3 +21,13 @@ func Paginate(value any, pagination *GormPaginationData, db *gorm.DB) func(db *g
 		return db.Offset(pagination.GetOffset()).Limit(pagination.GetLimit()).Order(pagination.GetSort())
 	}
 }
+
+func Contains[T comparable](ss []T, v T) bool {
+	for _, s := range ss {
+		if s == v {
+			return true
+		}
+	}
+
+	return false
+}
