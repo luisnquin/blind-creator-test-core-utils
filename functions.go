@@ -3,7 +3,7 @@ package utils
 import (
 	"math"
 
-	"github.com/jinzhu/gorm"
+	"gorm.io/gorm"
 )
 
 func Paginate(value any, pagination *GormPaginationData, db *gorm.DB) func(db *gorm.DB) *gorm.DB {
